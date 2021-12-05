@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sun/src/cpp/realpath_learn.cpp
+iostream
+-
+sys/param.h
+-
+sys/stat.h
+-
+errno.h
+-
+stdlib.h
+-
+string.h
+-
+unistd.h
+-
+stdio.h
+-
+limits.h
+-
+libgen.h
+-
+string
+-
+

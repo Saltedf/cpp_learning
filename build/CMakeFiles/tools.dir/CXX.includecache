@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/tools.hpp
+iostream
+-
+
+/home/sun/src/cpp/lib/tools.cpp
+tools.hpp
+/home/sun/src/cpp/lib/tools.hpp
+
