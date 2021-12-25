@@ -1,4 +1,3 @@
-
 #include <unistd.h>
 #include<ios>
 #include<fstream>
@@ -7,13 +6,10 @@
 #include<string>
 #include<vector>
 
-
 int main(int argc , char** argv) {
 
     if(argc < 2) {
-        
         std::cerr << "usage: <sourcefiles...>  <-t target>  [-h header_path] " << std::endl;
-
         return EXIT_FAILURE;
     }
 
@@ -23,14 +19,13 @@ int main(int argc , char** argv) {
     std::string targetname{} ;
     std::string include_dir{};
 
-
     std::ofstream cmakelist{"CMakeLists.txt"};
     if(!cmakelist) {
         std::cerr <<"cannot create CMakeLists.txt " << std::endl;
         return EXIT_FAILURE;
     }
 
-    std::ostringstream sourcefiles;
+    std::ostringstream sourcefiles{};
 
     do {
     opt_ch = getopt(argc,argv,opts.c_str() ) ;
@@ -77,22 +72,7 @@ int main(int argc , char** argv) {
     }
 
     cmakelist << "add_executable(" << targetname << sourcefiles.str() <<" )\n" ;
-    
-    
-
-
-
-
     std::cout << "\nOK!" << std::endl ;
-
-
-
-
-
-
-
-
-
-
+    exit(1);
 }
 
