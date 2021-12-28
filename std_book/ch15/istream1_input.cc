@@ -1,4 +1,3 @@
-
 #include <ios>
 #include<limits>
 #include <fstream> 
@@ -10,13 +9,12 @@
 
 int main(int argc , char** argv) {
 
-
     std::fstream fs{argv[1]} ;
     if(!fs) {
         std::cerr << "cannot open file " << std::endl;
         return EXIT_FAILURE;
     }
-
+    
     int get_ch{} ;
 
     get_ch = fs.get() ; //返回int ,因为可能返回-1 = EOF 
@@ -56,34 +54,24 @@ int main(int argc , char** argv) {
    //读入由特定字符分割的C风格的字符串
    fs.getline(str_buf,10, '#'); //读但不存 
 
-
    //读取N个字符构成的字符序列 无尾零
    fs.read(str_buf,10); //读到EOF 则出错：failbit+eofbit
    std::cout << "fs.read()-> "<<  fs.gcount() << std::endl;
 
    int nread = fs.readsome(str_buf , 10); //读到EOF不算出错：不设置 eofbit 和 failbit
 
-
-
    
 
 
-//ignore : 消耗并丢弃
+   //ignore : 消耗并丢弃 
 
    //fs.ignore(1) //忽略一个字符
 
    //忽略本行剩余部分 ,包含分割符 '\n' 
-   fs.ignore(std::numeric_limits<std::streamsize>::max() ,'\n') ;
+   fs.ignore(std::numeric_limits<std::streamsize>::max() ,'\n') ;  //<limits>
 
    //忽略掉剩余部分
    fs.ignore(std::numeric_limits<std::streamsize>::max() ) ;
-
-
-
-
-    
-
-
 
 
     return EXIT_SUCCESS ; 
