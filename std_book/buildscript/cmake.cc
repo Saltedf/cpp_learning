@@ -74,30 +74,10 @@ int main(int argc , char** argv) {
     }
 
     cmakelist << "add_executable(" << targetname << sourcefiles.str() <<" )\n" ;
-<<<<<<< HEAD:std_book/buildscript/cmake.cc
-
-
-    if(-1 == chdir("./build")) {
-        std::cerr << "chdir(): " << strerror(errno) << std::endl ;
-        exit(1) ;
-    }
-
-    char pwd[128];
-    std::cout <<  getcwd(pwd,128) << std::endl;
-    system("cmake ../ ");
-    
-    std::cout <<  getcwd(pwd,128) << std::endl;
-
-    system("make");
-    
-    std::cout <<  getcwd(pwd,128) << std::endl;
-    
 
 
 
 
-=======
->>>>>>> 6de1f43d161712e74501d1a38ea52f06f4c3c20f:std_book/cmake.cc
     std::cout << "\nOK!" << std::endl ;
     exit(1);
 }
