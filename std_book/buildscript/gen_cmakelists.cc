@@ -41,11 +41,13 @@ int main(int argc , char** argv) {
             break;
 
         case 't':
+            std::cout << "- Target Name: " ;
             std::cout << optarg <<std::endl;
             targetname = std::string{optarg};
             break;
 
         case 'h':
+            std::cout << "- Header: " ;
             std::cout << optarg <<std::endl;
             include_dir = std::string{optarg};
             break;
@@ -64,6 +66,7 @@ int main(int argc , char** argv) {
     cmakelist<< "set(CMAKE_EXPORT_COMPILE_COMMANDS ON) #生成一个存放编译命令的json文件 \n" ;
     cmakelist << "set(CMAKE_CXX_FLAGS \"-g -Wall\") \n" ;
 
+
     if(include_dir != ""){
         cmakelist <<"include_directories(" << include_dir << ") #将会在此目录中寻找头文件，从而可以省略目录名\n";
     }
@@ -75,10 +78,10 @@ int main(int argc , char** argv) {
 
     cmakelist << "add_executable(" << targetname << sourcefiles.str() <<" )\n" ;
 
+    cmakelist << std::flush;
 
 
-
-    std::cout << "\nOK!" << std::endl ;
-    exit(1);
+    std::cout << "\nfinished!" << std::endl ;
+    return 0 ;
 }
 

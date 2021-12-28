@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/home/sun/.bin/gen_cmakelists  $@ 
+$PWD/gen_cmakelists  $@ 
 #rm -rf ./build
 mkdir ./build 
 cd ./build
