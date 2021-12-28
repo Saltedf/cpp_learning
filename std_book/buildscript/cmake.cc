@@ -6,6 +6,8 @@
 #include <sstream>
 #include<string>
 #include<vector>
+#include <cerrno>
+#include <cstring>
 
 
 int main(int argc , char** argv) {
@@ -77,7 +79,22 @@ int main(int argc , char** argv) {
     }
 
     cmakelist << "add_executable(" << targetname << sourcefiles.str() <<" )\n" ;
+
+
+    if(-1 == chdir("./build")) {
+        std::cerr << "chdir(): " << strerror(errno) << std::endl ;
+        exit(1) ;
+    }
+
+    char pwd[128];
+    std::cout <<  getcwd(pwd,128) << std::endl;
+    system("cmake ../ ");
     
+    std::cout <<  getcwd(pwd,128) << std::endl;
+
+    system("make");
+    
+    std::cout <<  getcwd(pwd,128) << std::endl;
     
 
 

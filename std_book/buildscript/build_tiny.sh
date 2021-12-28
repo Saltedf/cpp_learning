@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./cmakewarpper $@ 
+/home/sun/.bin/cmakewrapper $@ 
 cd ./build
 cmake ..
 make
