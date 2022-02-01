@@ -2,8 +2,10 @@ set(CMAKE_MINIMUM_REQUIRED_VERSION 3.10)
 
 set(CMAKE_CXX_STANDARD 17)
 
-project(template)
+set(CMAKE_CXX_FLAGS  "-Wall -g -O2")
 
-add_executable(main 1_sfinae_typefunc.cc)
+project(template_learning )
+
+add_executable(main  ./3_2_nontype_para_templ.cc)
 
 
